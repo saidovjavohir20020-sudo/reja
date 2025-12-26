@@ -3,6 +3,7 @@ const express = require("express");
 const app = express();
 const http = require("http")
 const fs = require("fs")
+const path = require("path");
 
 
 let user;
@@ -13,8 +14,11 @@ fs.readFile("database/user.json", "utf8", (err, data) =>{
       user = JSON.parse(data)
     }
 });
+
+
 // 1: kirish code
 app.use(express.static("public"));
+// app.use(express.static(path.join(__dirname, "public")));
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 // 2: session code
