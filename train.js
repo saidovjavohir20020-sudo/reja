@@ -1,19 +1,35 @@
        // A - TASK
-       const harf = "a";
-       const soz = "Modernizatsiyalashtirilmaganlashtirilganlaringizdandir";
-  function countLetter(a, Modernizatsiyalashtirilmaganlashtirilganlaringizdandir) {
-  let count = 0;
+//        const harf = "a";
+//        const soz = "Modernizatsiyalashtirilmaganlashtirilganlaringizdandir";
+//   function countLetter(a, Modernizatsiyalashtirilmaganlashtirilganlaringizdandir) {
+//   let count = 0;
 
-  for (const ele of Modernizatsiyalashtirilmaganlashtirilganlaringizdandir) {
-    if (ele === a) {
-      count++;
+//   for (const ele of Modernizatsiyalashtirilmaganlashtirilganlaringizdandir) {
+//     if (ele === a) {
+//       count++;
+//     }
+//   }
+
+//   return count;
+// }
+
+// console.log(countLetter(harf, soz));
+const c = "a";
+const d = "banana"
+function countNotLetter(a, banana) {
+  let count = 0;
+  
+  for (const ele of d) {
+    
+    if(ele !== a) {
+      count++
     }
   }
-
   return count;
 }
 
-console.log(countLetter(harf, soz));
+console.log(countNotLetter(c,d));
+
 
 
 
