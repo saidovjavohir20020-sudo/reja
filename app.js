@@ -6,8 +6,6 @@ const app = express();
 
 // MongoDB connection
 const db = require("./server").db();
-// const connectionString =
-// "mongodb+srv://saidovjavohir20020_db_user:zGdfw5094vKR3INg@cluster0.pv0vteo.mongodb.net/";
 
 // 1: kirish code
 app.use(express.static("public"));
@@ -23,16 +21,36 @@ const path = require("path");
 
 // 4: routing code
 app.post("/create-item", (req, res)=> {
-    console.log(req.body);
-    res.json({test: "success"});
+    // console.log(req.body);
+    console.log("user entered /create-item");
+    const new_reja = req.body.reja;
+    
+    db.collection("plans").insertOne({reja: new_reja}, (err, data)=>{
+      if(err) {
+        console.log(err)
+        res.end("something went wrong");
+      } else {
+        res.end("succeesfully added")
+      }
+    })
 });
 
 app.get('/author', (req, res) => {
+  console.log("user entered /");
     res.render("author", {user: user});
 })
 
 app.get("/", function (req, res) {
-  res.render("reja");
+  db.collection("plans").find().toArray ((err, data) => {
+    if (err) {
+      console.log(err);
+      res.end("something went wrong");
+    } else {
+      console.log(data);
+      res.render("reja", {items: data});;
+    }
+  });
+ 
 });
 
 module.exports = app;

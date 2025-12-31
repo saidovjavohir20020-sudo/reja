@@ -1,4 +1,28 @@
-       // A - TASK
+// TASK-B
+
+const text = "ad2a54y79wet0sfgbdfgsut984t7855555555555555557dfsjioidfduiu9";
+
+function countDigits(string) {
+  let count = 0;
+
+  for (const ele of string) {  
+    if (ele >= '0' && ele <= '9') { 
+      count++;
+    }
+  }
+
+  return count;
+}
+
+console.log(countDigits(text)); // 7
+
+
+
+
+
+
+
+// A - TASK
 //        const harf = "a";
 //        const soz = "Modernizatsiyalashtirilmaganlashtirilganlaringizdandir";
 //   function countLetter(a, Modernizatsiyalashtirilmaganlashtirilganlaringizdandir) {
@@ -14,21 +38,21 @@
 // }
 
 // console.log(countLetter(harf, soz));
-const c = "a";
-const d = "banana"
-function countNotLetter(a, banana) {
-  let count = 0;
+// const c = "a";
+// const d = "banana"
+// function countNotLetter(a, banana) {
+//   let count = 0;
   
-  for (const ele of d) {
+//   for (const ele of d) {
     
-    if(ele !== a) {
-      count++
-    }
-  }
-  return count;
-}
+//     if(ele !== a) {
+//       count++
+//     }
+//   }
+//   return count;
+// }
 
-console.log(countNotLetter(c,d));
+// console.log(countNotLetter(c,d));
 
 
 

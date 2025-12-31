@@ -6,7 +6,7 @@ const mongodb = require("mongodb");
 
 let db;
 const connectionString =
- "mongodb+srv://saidovjavohir20020_db_user:saidovjavohir@cluster0.d24nmdu.mongodb.net/";
+ "mongodb+srv://saidovjavohir20020_db_user:JvU4d4bJSAIE6Iu1@cluster0.d24nmdu.mongodb.net/Reja?appName=Cluster0";
 
  mongodb.connect(connectionString, {
     useNewUrlParser: true,
