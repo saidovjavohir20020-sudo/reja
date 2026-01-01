@@ -14,7 +14,7 @@ function countDigits(string) {
   return count;
 }
 
-console.log(countDigits(text)); // 7
+console.log(countDigits(text)); 
 
 
 
