@@ -46,7 +46,7 @@ document.addEventListener("click", function (e) {
       axios.post("/delete-item", {id: e.target.getAttribute("data-id")})
       .then((response) => {
         console.log(response.data);
-        e.target.parentElement.parentElement.remowe();
+        e.target.parentElement.parentElement.remove();
       })
       .catch((err) => {
         console.log("Iltimos qaytadan harakat qiling!");
