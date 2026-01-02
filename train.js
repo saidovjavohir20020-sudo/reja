@@ -1,20 +1,58 @@
-// TASK-B
-
-const text = "ad2a54y79wet0sfgbdfgsut984t7855555555555555557dfsjioidfduiu9";
-
-function countDigits(string) {
-  let count = 0;
-
-  for (const ele of string) {  
-    if (ele >= '0' && ele <= '9') { 
-      count++;
-    }
+// TASK-c
+class Shop {
+  constructor(non, lagmon, cola) {
+    this.non = non;
+    this.lagmon = lagmon;
+    this.cola = cola;
   }
 
-  return count;
+  vaqt() {
+    const now = new Date();
+    return now.getHours() + ":" + now.getMinutes();
+  }
+
+  qoldiq() {
+    console.log(
+      `Hozir ${this.vaqt()}da ${this.non}ta non, ${this.lagmon}ta lag'mon va ${this.cola}ta cola bor`
+    );
+  }
+
+  sotish(nomi, soni) {
+    this[nomi] = this[nomi] - soni;
+    console.log(`${soni}ta ${nomi} sotildi`);
+  }
+
+  qabul(nomi, soni) {
+    this[nomi] = this[nomi] + soni;
+    console.log(`${soni}ta ${nomi} qabul qilindi`);
+  }
 }
 
-console.log(countDigits(text)); 
+const shop = new Shop(6, 8, 5);
+
+shop.qoldiq();
+shop.sotish("non", 30);
+shop.qabul("cola", 20);
+shop.qoldiq();
+
+
+// TASK-B
+
+// const text = "ad2a54y79wet0sfgbdfgsut984t7855555555555555557dfsjioidfduiu9";
+
+// function countDigits(string) {
+//   let count = 0;
+
+//   for (const ele of string) {  
+//     if (ele >= '0' && ele <= '9') { 
+//       count++;
+//     }
+//   }
+
+//   return count;
+// }
+
+// console.log(countDigits(text)); 
 
 
 

@@ -1,5 +1,3 @@
-// const { response } = require("../app");
-
 console.log("Frontend JS ishga tushdi");
 
 function itemTemplate(item) {
@@ -35,7 +33,29 @@ axios
      createField.focus();
 })
 .catch(err => {
-    console.log("Iltimos qaytadan harakat qiling!")
+    console.log("Iltimos qaytadan harakat qiling!");
 })
 
+});
+
+document.addEventListener("click", function (e) {
+  // delete opreration
+  console.log(e.target);
+    if (e.target.classList.contains("delete-me"))  {
+    if (confirm("Aniq o'chirmoqchimisiz?")) {
+      axios.post("/delete-item", {id: e.target.getAttribute("data-id")})
+      .then((response) => {
+        console.log(response.data);
+        e.target.parentElement.parentElement.remowe();
+      })
+      .catch((err) => {
+        console.log("Iltimos qaytadan harakat qiling!");
+      });
+    } 
+  }
+
+    // edit operation
+   if (e.target.classList.contains("edit-me")) {
+    alert("siz edit tugmasini bosdingiz")
+   }
 });
