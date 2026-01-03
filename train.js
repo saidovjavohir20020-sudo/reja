@@ -1,39 +1,62 @@
-// TASK-c
-class Shop {
-  constructor(non, lagmon, cola) {
-    this.non = non;
-    this.lagmon = lagmon;
-    this.cola = cola;
+function checkContent(a, b) {
+  if (a.length !== b.length) {
+    return false;
   }
 
-  vaqt() {
-    const now = new Date();
-    return now.getHours() + ":" + now.getMinutes();
-  }
+  const sortA = a.split("").sort().join("");
+  const sortB = b.split("").sort().join("");
 
-  qoldiq() {
-    console.log(
-      `Hozir ${this.vaqt()}da ${this.non}ta non, ${this.lagmon}ta lag'mon va ${this.cola}ta cola bor`
-    );
-  }
-
-  sotish(nomi, soni) {
-    this[nomi] = this[nomi] - soni;
-    console.log(`${soni}ta ${nomi} sotildi`);
-  }
-
-  qabul(nomi, soni) {
-    this[nomi] = this[nomi] + soni;
-    console.log(`${soni}ta ${nomi} qabul qilindi`);
-  }
+  return sortA === sortB;
 }
 
-const shop = new Shop(6, 8, 5);
+console.log(checkContent("abcdefgmolas", "adcbgefsalom"));
+console.log(checkContent("dghyuew", "udey3ieyd"));       
 
-shop.qoldiq();
-shop.sotish("non", 30);
-shop.qabul("cola", 20);
-shop.qoldiq();
+
+
+
+
+
+
+
+
+
+// TASK-c
+// class Shop {
+//   constructor(non, lagmon, cola) {
+//     this.non = non;
+//     this.lagmon = lagmon;
+//     this.cola = cola;
+//   }
+
+//   vaqt() {
+//     const now = new Date();
+//     return now.getHours() + ":" + now.getMinutes();
+//   }
+
+//   qoldiq() {
+//     console.log(
+//       `Hozir ${this.vaqt()}da ${this.non}ta non, ${this.lagmon}ta lag'mon va ${this.cola}ta cola bor`
+//     );
+//   }
+
+//   sotish(nomi, soni) {
+//     this[nomi] = this[nomi] - soni;
+//     console.log(`${soni}ta ${nomi} sotildi`);
+//   }
+
+//   qabul(nomi, soni) {
+//     this[nomi] = this[nomi] + soni;
+//     console.log(`${soni}ta ${nomi} qabul qilindi`);
+//   }
+// }
+
+// const shop = new Shop(6, 8, 5);
+
+// shop.qoldiq();
+// shop.sotish("non", 30);
+// shop.qabul("cola", 20);
+// shop.qoldiq();
 
 
 // TASK-B
