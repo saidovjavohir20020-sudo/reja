@@ -22,7 +22,7 @@ const path = require("path");
 // 4: routing code
 app.post("/create-item", (req, res)=> {
     // console.log(req.body);
-    console.log("user entered /create-item");
+    // console.log("user entered /create-item");
     const new_reja = req.body.reja;
     
     db.collection("plans").insertOne({reja: new_reja}, (err, data)=>{
@@ -39,9 +39,29 @@ app.post("/delete-item", (req, res) => {
   
 });
 
+app.post("/edit-item", (req, res) => {
+  const data = req.body;
+  console.log(data);
+  db.collection("plans").findOneAndUpdate(
+    {_id:new mongodb.ObjectId(data.id)}, 
+    {$set: {reja: data.new_input}}, 
+    function(err, data) {
+      res.json({state: "success"})
+    })
+  
+})
+
 app.get('/author', (req, res) => {
   console.log("user entered /");
     res.render("author", {user: user});
+})
+
+app.post("/delete-all", (req,res) => {
+  if (req.body.delete_all) {
+    db.collection("plans").deleteMany(function() {
+      res.json({state: "hamma rejalar o'chirildi"});
+    })
+  }
 })
 
 app.get("/", function (req, res) {
