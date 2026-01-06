@@ -1,22 +1,30 @@
-function checkContent(a, b) {
-  if (a.length !== b.length) {
-    return false;
+function reverseS (a) {
+  if(typeof a !=="string") {
+    console.log("please insert the string!")
   }
+  else {
+    return a.split("").reverse().join("");
+ }
 
-  const sortA = a.split("").sort().join("");
-  const sortB = b.split("").sort().join("");
-
-  return sortA === sortB;
 }
-
-console.log(checkContent("abcdefgmolas", "adcbgefsalom"));
-console.log(checkContent("dghyuew", "udey3ieyd"));       
+console.log(reverseS("abc"));
 
 
 
 
+// function checkContent(a, b) {
+//   if (a.length !== b.length) {
+//     return false;
+//   }
 
+//   const sortA = a.split("").sort().join("");
+//   const sortB = b.split("").sort().join("");
 
+//   return sortA === sortB;
+// }
+
+// console.log(checkContent("abcdefgmolas", "adcbgefsalom"));
+// console.log(checkContent("dghyuew", "udey3ieyd"));       
 
 
 
