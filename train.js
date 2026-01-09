@@ -1,13 +1,32 @@
-function reverseS (a) {
-  if(typeof a !=="string") {
-    console.log("please insert the string!")
-  }
-  else {
-    return a.split("").reverse().join("");
- }
+//  TASK F   
+function findResult(str) {
+  for (let i = 0; i < str.length; i++) {
 
+    if (str.indexOf(str[i]) !== i) {
+      return true;
+    }
+  }
+  
+  return false;
 }
-console.log(reverseS("abc"));
+
+const result = findResult("hello");
+console.log(result);
+
+
+    
+    // task-E
+       
+// function reverseS (a) {
+//   if(typeof a !=="string") {
+//     console.log("please insert the string!")
+//   }
+//   else {
+//     return a.split("").reverse().join("");
+//  }
+
+// }
+// console.log(reverseS("abc"));
 
 
 
